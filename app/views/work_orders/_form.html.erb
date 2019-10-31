@@ -1,8 +1,8 @@
-<%= form_with(model: work_order, local: true) do |form| %>
-  <% if work_order.errors.any? %>
+<%= simple_form_for @work_order, remote: true do |f| %>
+  <div class="form-inputs">
+    <% if work_order.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(work_order.errors.count, "error") %> prohibited this work_order from being saved:</h2>
-
       <ul>
       <% work_order.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -11,37 +11,16 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :technician_id %>
-    <%= form.number_field :technician_id %>
+    <%= f.input :technician_id, as: :integer %>
+    <%= f.input :location_id, as: :integer %>
+    <%= f.input :price, as: :integer %>
+    <%= f.input :duration, as: :integer %>
+    <%= f.input_field :start_time, as: :date, html5: true, class: 'form-control input-sm start_hidden' %>
+    <%= f.input_field :end_time, as: :date, html5: true, class: 'form-control input-sm end_hidden' %>
+    <%= f.input :color, as: :select, collection: [['Black','black'], ['Green','green'], ['Red','red']] %>
   </div>
 
-  <div class="field">
-    <%= form.label :location_id %>
-    <%= form.number_field :location_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :start_time %>
-    <%= form.datetime_select :start_time %>
-  </div>
-
-  <div class="field">
-    <%= form.label :end_time %>
-    <%= form.datetime_select :end_time %>
-  </div>
-
-  <div class="field">
-    <%= form.label :duration %>
-    <%= form.number_field :duration %>
-  </div>
-
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.number_field :price %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-actions">
+    <%= f.button :submit %>
   </div>
 <% end %>

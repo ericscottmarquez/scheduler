@@ -20,7 +20,6 @@
 //= require fullcalendar
 //= require_tree .
 
-
 function eventCalendar() {
   return $('#calendar').fullCalendar({ 
     header: {
@@ -76,8 +75,3 @@ $(document).on('turbolinks:load', function(){
 });
 
 $(document).on('turbolinks:before-cache', clearCalendar);
-
-
-
-
-

@@ -26,7 +26,6 @@ class WorkOrdersController < ApplicationController
   def create
     @work_order = WorkOrder.new(work_order_params)
     @work_order.save
-    
 
     # respond_to do |format|
     #   if @work_order.save
@@ -71,6 +70,6 @@ class WorkOrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def work_order_params
-      params.require(:work_order).permit(:technician_id, :location_id, :start_time, :end_time, :duration, :price)
+      params.require(:work_order).permit(:technician_id, :location_id, :start_time, :end_time, :duration, :price, :color)
     end
 end
