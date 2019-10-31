@@ -1,0 +1,16 @@
+
+<div class="modal fade" id="edit_event">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Edit Work Order</h4>
+      </div>
+      <div class="modal-body">
+        <%= render 'form', work_order: @work_order %>
+      </div>
+      <%= link_to 'Show', @work_order %> |
+      <%= link_to 'Back', work_orders_path %>
+    </div>
+  </div>
+</div>

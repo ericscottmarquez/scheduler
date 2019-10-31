@@ -1,0 +1,74 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Work Orders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Technician</th>
+      <th>Location</th>
+      <th>Start time</th>
+      <th>End time</th>
+      <th>Duration</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @work_orders.each do |work_order| %>
+      <tr>
+        <td><%= work_order.technician_id %></td>
+        <td><%= work_order.location_id %></td>
+        <td><%= work_order.start_time %></td>
+        <td><%= work_order.end_time %></td>
+        <td><%= work_order.duration %></td>
+        <td><%= work_order.price %></td>
+        <td><%= link_to 'Show', work_order %></td>
+        <td><%= link_to 'Edit', edit_work_order_path(work_order), remote: true %></td>
+        <td><%= link_to 'Destroy', work_order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Work Order', new_work_order_path %>
+
+<%= week_calendar events: @work_orders do |date, work_orders| %>
+<div>
+  <%= date %>
+</div>
+<br/>
+  <% work_orders.each do |work_order| %>
+    <div>
+      <h4>Technician ID:</h4> 
+      <%= work_order.technician_id %>
+    </div>
+    <div>
+      <h4>Location ID: </h4>
+      <%= work_order.location_id %>
+    </div>
+    <div>
+      <h4>Start Time: </h4>
+      <%= work_order.start_time %>
+    </div>
+    <div>
+      <h4>End Time: </h4>
+      <%= work_order.end_time %>
+    </div>
+    <div>
+      <h4>Duration: </h4>
+      <%= work_order.duration %>
+    </div>
+    <div>
+      <h4>Price: </h4>
+      $<%= work_order.price %>
+    </div>
+  <% end %>
+<% end %>
+
+
+<div id="calendar"></div>
+

@@ -1,0 +1,7 @@
+$('.calendar').fullCalendar('removeEvents', [<%= @work_order.id %>]);
+$('.calendar').fullCalendar(
+  'renderEvent', 
+  $.parseJSON("<%=j render(@work_order, format: :json).html_safe %>"), 
+  true
+);
+$('.modal').modal('hide');
