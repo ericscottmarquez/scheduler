@@ -34,41 +34,5 @@
 
 <br>
 
-<%= link_to 'New Work Order', new_work_order_path %>
-
-<%= week_calendar events: @work_orders do |date, work_orders| %>
-<div>
-  <%= date %>
-</div>
-<br/>
-  <% work_orders.each do |work_order| %>
-    <div>
-      <h4>Technician ID:</h4> 
-      <%= work_order.technician_id %>
-    </div>
-    <div>
-      <h4>Location ID: </h4>
-      <%= work_order.location_id %>
-    </div>
-    <div>
-      <h4>Start Time: </h4>
-      <%= work_order.start_time %>
-    </div>
-    <div>
-      <h4>End Time: </h4>
-      <%= work_order.end_time %>
-    </div>
-    <div>
-      <h4>Duration: </h4>
-      <%= work_order.duration %>
-    </div>
-    <div>
-      <h4>Price: </h4>
-      $<%= work_order.price %>
-    </div>
-  <% end %>
-<% end %>
-
-
 <div id="calendar"></div>
 
