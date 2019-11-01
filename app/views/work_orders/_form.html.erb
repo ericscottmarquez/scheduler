@@ -15,12 +15,38 @@
     <%= f.input :location_id, as: :integer %>
     <%= f.input :price, as: :integer %>
     <%= f.input :duration, as: :integer %>
-    <%= f.input_field :start_time, as: :date, html5: true, class: 'form-control input-sm start_hidden' %>
-    <%= f.input_field :end_time, as: :date, html5: true, class: 'form-control input-sm end_hidden' %>
+
+    <div class='input-group date' id='datetimepicker1'>
+        <input type='text' class="form-control" />
+        <%= f.input :start_time, class: 'form-control' %>
+        <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+    </div>
+
+    <div class='input-group date' id='datetimepicker2'>
+    <input type='text' class="form-control" />
+    <%= f.input :end_time, class: 'form-control' %>
+    <span class="input-group-addon">
+        <span class="glyphicon glyphicon-calendar"></span>
+    </span>
+    </div>
+
+
     <%= f.input :color, as: :select, collection: [['Black','black'], ['Green','green'], ['Red','red']] %>
   </div>
 
   <div class="form-actions">
     <%= f.button :submit %>
   </div>
+
 <% end %>
+
+    <script type="text/javascript">
+    $(function () {
+    $('#datetimepicker1').datetimepicker({ locale: false});
+    });
+        $(function () {
+    $('#datetimepicker2').datetimepicker();
+    });
+    </script>

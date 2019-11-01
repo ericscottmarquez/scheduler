@@ -17,6 +17,7 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require moment 
+//= require bootstrap-datetimepicker
 //= require fullcalendar
 //= require_tree .
 
@@ -39,7 +40,7 @@ function eventCalendar() {
         $('.end_hidden').val(moment(end).format('YYYY-MM-DD HH:mm'));
       });
 
-      calendar.fullCalendar('unselect');
+      this.calendar.fullCalendar('unselect');
     },
 
     eventDrop: function(work_order, delta, revertFunc) {
