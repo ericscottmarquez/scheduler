@@ -11,11 +11,15 @@ create a postgres user that matches `/config/database.yml`, or edit the file wit
 
 to create a pg user, enter postgres cli, then: `postgres=# CREATE USER example WITH PASSWORD 'example_password';`<br/>
 <br/>
-To Edit user: `postgres=# ALTER USER eric WITH PASSWORD 'password';`,
+________________________________________________________________________________________
+<br/>
+(only if you want to Edit user: `postgres=# ALTER USER eric WITH PASSWORD 'password';`,
 <br/>
 You should get: `postgres=# ALTER ROLE`
 <br/>
 quit pg: `postgres=# \q`
+<br/>
+________________________________________________________________________________________
 <br/>
 run `rake db:create`
 <br/>
