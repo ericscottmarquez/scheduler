@@ -26,8 +26,9 @@ cd into the project and run `bundle install`
 create a postgres user
 
 `
-postgres=# ALTER USER eric WITH PASSWORD 'password';
-ALTER ROLE
+postgres=# ALTER USER eric WITH PASSWORD 'password';`
+You shoule get:
+`ALTER ROLE
 postgres=# \q
 `
 run rake `db:create`
