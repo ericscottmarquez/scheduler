@@ -15,11 +15,11 @@ To Edit user: `postgres=# ALTER USER eric WITH PASSWORD 'password';`,
 <br/>
 You should get: `postgres=# ALTER ROLE`
 <br/>
-quit pg:`postgres=# \q`
+quit pg: `postgres=# \q`
 <br/>
-run rake `db:create`
+run `rake db:create`
 <br/>
-run rake `db:migrate`
+run `rake db:migrate`
 <br/>
 start the server with `rails s` 
 <br/>
