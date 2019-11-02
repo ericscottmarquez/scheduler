@@ -7,21 +7,24 @@
 
 cd into the project and run `bundle install`
 
-create a postgres user
+create a postgres user that matches `/config/database.yml`, or edit the file with your own system pg configuration.<br/>
 
-`
-postgres=# ALTER USER eric WITH PASSWORD 'password';`,
-You should get:
-`ALTER ROLE`, then quit:
-`postgres=# \q`
-
+to create a pg user, enter postgres cli, then: `postgres=# CREATE USER example WITH PASSWORD 'example_password';`<br/>
+<br/>
+To Edit user: `postgres=# ALTER USER eric WITH PASSWORD 'password';`,
+<br/>
+You should get: `postgres=# ALTER ROLE`
+<br/>
+quit pg:`postgres=# \q`
+<br/>
 run rake `db:create`
-
+<br/>
 run rake `db:migrate`
-
+<br/>
 start the server with `rails s` 
-
+<br/>
 server by default runs on port :3000
+<br/>
 
-* ...
+*
 
