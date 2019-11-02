@@ -2,35 +2,43 @@
 
 <h1>Work Orders</h1>
 
-<table>
+<table class="table">
+<%= form_tag import_work_orders_path, multipart: true do %>
+<%= file_field_tag :file %>
+<%= submit_tag "Import File", classs: 'btn btn-success'%>
+<%end%>
+
   <thead>
-    <tr>
-      <th>Technician</th>
-      <th>Location</th>
-      <th>Start time</th>
-      <th>End time</th>
-      <th>Duration</th>
-      <th>Price</th>
+    <tr scope="row">
+      <th scope="col">Technician</th>
+      <th scope="col">Location</th>
+      <th scope="col">Start time</th>
+      <th scope="col">End time</th>
+      <th scope="col">Duration</th>
+      <th scope="col">Price</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @work_orders.each do |work_order| %>
-      <tr>
+      <tr scope="row">
         <td><%= work_order.technician_id %></td>
         <td><%= work_order.location_id %></td>
         <td><%= work_order.start_time %></td>
         <td><%= work_order.end_time %></td>
         <td><%= work_order.duration %></td>
         <td><%= work_order.price %></td>
-        <td><%= link_to 'Show', work_order %></td>
-          
-        <td><%= link_to 'Destroy', work_order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', work_order, class: 'btn btn-primary' %></td>
+        <td><%= link_to 'Destroy', work_order, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
       </tr>
     <% end %>
   </tbody>
+
 </table>
+
+<%= link_to 'New Technician', technicians_path %>
+
 
 <br>
 

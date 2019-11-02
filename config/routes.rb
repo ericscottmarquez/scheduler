@@ -3,4 +3,8 @@ Rails.application.routes.draw do
   resources :work_orders
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'work_orders#index'
+
+  resources :work_orders do
+    collection {post :import}
+  end
 end

@@ -1,10 +1,16 @@
 class WorkOrdersController < ApplicationController
   before_action :set_work_order, only: [:show, :edit, :update, :destroy]
 
+
   # GET /work_orders
   # GET /work_orders.json
   def index
     @work_orders = WorkOrder.all
+  end
+
+  def import 
+    WorkOrder.my_import(params[:file])
+    redirect_to root_url, notice: "Successfully Imported CSV"
   end
 
   # GET /work_orders/1
