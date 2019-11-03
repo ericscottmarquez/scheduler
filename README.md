@@ -1,41 +1,35 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* ruby 2.5.3
+* rails 5.2.3
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
+* Configuration:
 
 cd into the project and run `bundle install`
 
-create a postgres user
+create a postgres user that matches `/config/database.yml`, or edit the file with your own system pg configuration.<br/>
 
-`
-postgres=# ALTER USER eric WITH PASSWORD 'password';
-ALTER ROLE
-postgres=# \q
-`
-run rake `db:create`
-
-run rake `db:migrate`
-
+to create a pg user, enter postgres cli, then: `postgres=# CREATE USER example WITH PASSWORD 'example_password';`
+<br/>
+<br/>
+run `rake db:create`
+<br/>
+<br/>
+run `rake db:migrate`
+<br/>
+<br/>
 start the server with `rails s` 
-
+<br/>
+<br/>
 server by default runs on port :3000
+<br/>
+<br/>
+________________________________________________________________________________________
+<br/>
+(Handy: edit PG user: `postgres=# ALTER USER eric WITH PASSWORD 'password';`,
+<br/>
+You should get: `postgres=# ALTER ROLE`
+<br/>
+quit pg: `postgres=# \q`
+<br/>
 
-* ...
